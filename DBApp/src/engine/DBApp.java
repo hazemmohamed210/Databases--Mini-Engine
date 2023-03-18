@@ -32,6 +32,8 @@ public class DBApp implements Serializable {
 					throws DBAppException {
 		//throw an exception if the table where the record will be inserted in doesn't exist
 		//check if a record with the inserted clusteringKey exists and if so throw an exception 
+		//binary search to find the right page to insert in?
+		//binary search within a page?
 	}
 	
 	public void updateTable(String strTableName, 
