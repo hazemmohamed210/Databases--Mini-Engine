@@ -24,7 +24,7 @@ public class DBApp implements Serializable {
 		//check if the table already exists and throw exception if it does
 		//check if the clusteringKey is one of the table columns
 		//check if each column type is one of the 4 types listed in the project description
-		//update the metadata file
+		//update the metadata file or create it if it does not exist 
 	}
 	
 	public void insertIntoTable(String strTableName, 
