@@ -45,7 +45,7 @@ This project is a small database engine with support for Octree indices.
   - `createIndex(String strTableName, String[] strarrColName)`: creates an index on a given table name and array of columns
   ```
   String[] columns = {"id","speed","model"};
-  db.createIndex("cars", arr);
+  db.createIndex("cars", arr); // create index indexName on cars(id,speed,model)
   ```
   - `insertIntoTable(String strTableName, Hashtable<String,Object> htblColNameValue)`: inserts a new row to a given table name
   ```
