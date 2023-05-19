@@ -20,7 +20,7 @@ This project is a small database engine with support for Octree indices.
 2. use the following methods to interact with the database engine:
   - `init( )`: initializes the database and creates a metadata file for the created tables
   - `createTable(String strTableName, String strClusteringKeyColumn, Hashtable<String,String> htblColNameType, Hashtable<String,String> htblColNameMin, Hashtable<String,String> htblColNameMax )`: creates a new table in the database
-  ```
+  ```java
   DBApp db = new DBApp();
   db.init();
   
@@ -47,12 +47,12 @@ This project is a small database engine with support for Octree indices.
   }
   ```
   - `createIndex(String strTableName, String[] strarrColName)`: creates an index on a given table name and array of strings for columns names
-  ```
+  ```java
   String[] columns = {"id","speed","model"};
   db.createIndex("cars", arr); // create index indexName on cars(id,speed,model)
   ```
   - `insertIntoTable(String strTableName, Hashtable<String,Object> htblColNameValue)`: inserts a new row to a given table name
-  ```
+  ```java
   Hashtable htblColNameValue = new Hashtable( ); 
   htblColNameValue.put("id", 1);
   htblColNameValue.put("model", "a");
@@ -65,7 +65,7 @@ This project is a small database engine with support for Octree indices.
   }
   ```
   - `updateTable(String strTableName, String strClusteringKeyValue, Hashtable<String,Object> htblColNameValue)`: updates a row in a given table name
-  ```
+  ```java
   Hashtable htblColNameValue = new Hashtable( ); 
   htblColNameValue.put("speed", 3);
   try {
@@ -75,7 +75,7 @@ This project is a small database engine with support for Octree indices.
   }
   ```
   - `deleteFromTable(String strTableName, Hashtable<String,Object> htblColNameValue)`: deletes any row satisfying the given conditions
-  ```
+  ```java
   Hashtable htblColNameValue = new Hashtable( ); 
   htblColNameValue.put("speed", 3);
   try {
@@ -85,7 +85,7 @@ This project is a small database engine with support for Octree indices.
   }
   ```
   - `selectFromTable(SQLTerm[] arrSQLTerms, String[] strarrOperators)`: returns the result set of the given query conditions
-  ```
+  ```java
   SQLTerm s1 = new SQLTerm("cars", "speed", "=", 241);
   SQLTerm s2 = new SQLTerm("cars", "model", "<", "d");
   SQLTerm s3 = new SQLTerm("cars", "id", "!=", 50);
@@ -94,7 +94,7 @@ This project is a small database engine with support for Octree indices.
   ResultSet r = (ResultSet) db.selectFromTable(sqlarr, ops); // select * from cars where speed = 241 and model < "d" and id != 50
   ```
   - `parseSQL(StringBuffer strbufSQL)`: parses the given SQL statement and executes one of the above methods accordingly and rejects any statement with a functionality not supported by this database engine
-  ```
+  ```java
   StringBuffer str = new StringBuffer("SELECT * FROM CARS WHERE MODEL > 'a' AND SPEED = 20");
   db.parseSQL(str)
   ```
