@@ -65,7 +65,7 @@ This project is a small database engine with support for Octree indices.
   Hashtable htblColNameValue = new Hashtable( ); 
   htblColNameValue.put("speed", 3);
   try {
-    db.updateTable("cars3", "1", htblColNameValue);
+    db.updateTable("cars", "1", htblColNameValue);
   } catch (DBAppException e) {
     e.printStackTrace();
   }
@@ -82,13 +82,12 @@ This project is a small database engine with support for Octree indices.
   ```
   - `selectFromTable(SQLTerm[] arrSQLTerms, String[] strarrOperators)`: returns the result set of the given query conditions
   ```
-  SQLTerm s2 = new SQLTerm("cars2", "model", "<", "d");
-  SQLTerm s1 = new SQLTerm("cars2", "speed", "=", 241);
-  SQLTerm s3 = new SQLTerm("cars2", "model", "=", "g");
-  SQLTerm s4 = new SQLTerm("cars2", "id", "!=", 50);
+  SQLTerm s1 = new SQLTerm("cars", "speed", "=", 241);
+  SQLTerm s2 = new SQLTerm("cars", "model", "<", "d");
+  SQLTerm s3 = new SQLTerm("cars", "id", "!=", 50);
   SQLTerm[] sqlarr = {s1,s2,s3};
   String[] ops = {"AND","AND"};
-  ResultSet r = (ResultSet) db.selectFromTable(sqlarr, ops);
+  ResultSet r = (ResultSet) db.selectFromTable(sqlarr, ops); // select * from cars where speed = 241 and model < "d" and id != 50
   ```
   - `parseSQL(StringBuffer strbufSQL)`: parses the given SQL and executes one of the above methods accordingly
   ```
