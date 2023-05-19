@@ -23,6 +23,10 @@ This project is a small database engine with support for Octree indices.
   ```
   DBApp db = new DBApp();
   db.init();
+  
+  // the datatypes for columns supported by this database engine are: Integer, String, Double and Date
+  // a minimum and a maximum must be specified for each column when creating the table
+  
   Hashtable htblColNameType = new Hashtable( ); 
   htblColNameType.put("speed", "java.lang.Integer"); 
   htblColNameType.put("model", "java.lang.String"); 
@@ -42,7 +46,7 @@ This project is a small database engine with support for Octree indices.
 			e.printStackTrace();
   }
   ```
-  - `createIndex(String strTableName, String[] strarrColName)`: creates an index on a given table name and array of columns
+  - `createIndex(String strTableName, String[] strarrColName)`: creates an index on a given table name and array of strings for columns names
   ```
   String[] columns = {"id","speed","model"};
   db.createIndex("cars", arr); // create index indexName on cars(id,speed,model)
@@ -86,10 +90,10 @@ This project is a small database engine with support for Octree indices.
   SQLTerm s2 = new SQLTerm("cars", "model", "<", "d");
   SQLTerm s3 = new SQLTerm("cars", "id", "!=", 50);
   SQLTerm[] sqlarr = {s1,s2,s3};
-  String[] ops = {"AND","AND"};
+  String[] ops = {"AND","AND"}; // available operators are AND, OR & XOR
   ResultSet r = (ResultSet) db.selectFromTable(sqlarr, ops); // select * from cars where speed = 241 and model < "d" and id != 50
   ```
-  - `parseSQL(StringBuffer strbufSQL)`: parses the given SQL statement and executes one of the above methods accordingly
+  - `parseSQL(StringBuffer strbufSQL)`: parses the given SQL statement and executes one of the above methods accordingly and rejects any statement with a functionality not supported by this database engine
   ```
   StringBuffer str = new StringBuffer("SELECT * FROM CARS WHERE MODEL > 'a' AND SPEED = 20");
   db.parseSQL(str)
