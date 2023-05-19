@@ -55,7 +55,7 @@ This project is a small database engine with support for Octree indices.
   htblColNameValue.put("speed", 120);
 			
   try {
-    db.insertIntoTable("cars", htblColNameValue);
+    db.insertIntoTable("cars", htblColNameValue); // insert into cars values(1,"a",120)
   } catch (DBAppException e) {
       e.printStackTrace();
   }
@@ -65,7 +65,7 @@ This project is a small database engine with support for Octree indices.
   Hashtable htblColNameValue = new Hashtable( ); 
   htblColNameValue.put("speed", 3);
   try {
-    db.updateTable("cars", "1", htblColNameValue);
+    db.updateTable("cars", "1", htblColNameValue); // update cars set speed = 3 where id = 1
   } catch (DBAppException e) {
     e.printStackTrace();
   }
@@ -75,7 +75,7 @@ This project is a small database engine with support for Octree indices.
   Hashtable htblColNameValue = new Hashtable( ); 
   htblColNameValue.put("speed", 3);
   try {
-    db.deleteFromTable("cars", htblColNameValue);
+    db.deleteFromTable("cars", htblColNameValue); // delete from cars where speed = 3
   } catch (DBAppException e) {
     e.printStackTrace();
   }
@@ -89,7 +89,7 @@ This project is a small database engine with support for Octree indices.
   String[] ops = {"AND","AND"};
   ResultSet r = (ResultSet) db.selectFromTable(sqlarr, ops); // select * from cars where speed = 241 and model < "d" and id != 50
   ```
-  - `parseSQL(StringBuffer strbufSQL)`: parses the given SQL and executes one of the above methods accordingly
+  - `parseSQL(StringBuffer strbufSQL)`: parses the given SQL statement and executes one of the above methods accordingly
   ```
   StringBuffer str = new StringBuffer("SELECT * FROM CARS WHERE MODEL > 'a' AND SPEED = 20");
   db.parseSQL(str)
