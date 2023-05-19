@@ -43,7 +43,7 @@ This project is a small database engine with support for Octree indices.
   try {
     db.createTable("cars", "id", htblColNameType, htblColNameMin, htblColNameMax);
   } catch (DBAppException e) {
-			e.printStackTrace();
+    e.printStackTrace();
   }
   ```
   - `createIndex(String strTableName, String[] strarrColName)`: creates an index on a given table name and array of strings for columns names
@@ -61,7 +61,7 @@ This project is a small database engine with support for Octree indices.
   try {
     db.insertIntoTable("cars", htblColNameValue); // insert into cars values(1,"a",120)
   } catch (DBAppException e) {
-      e.printStackTrace();
+    e.printStackTrace();
   }
   ```
   - `updateTable(String strTableName, String strClusteringKeyValue, Hashtable<String,Object> htblColNameValue)`: updates a row in a given table name
