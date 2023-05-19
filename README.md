@@ -12,12 +12,12 @@ This project is a small database engine with support for Octree indices.
 
 #Installation:
 
-1- clone the repository in the IDE you are using
-2- add the jar file `antlr-4.4-complete.jar` that you will find in the folder named lib to the project's classpath as an external jar file to be able to use the parseSQL function
+1. clone the repository in the IDE you are using
+2. add the jar file `antlr-4.4-complete.jar` that you will find in the folder named lib to the project's classpath as an external jar file to be able to use the parseSQL function
 
 #Usage:
-1- create an instance of the DBApp class in a main method
-2- use the following methods to interact with the database engine:
+1. create an instance of the DBApp class in a main method
+2. use the following methods to interact with the database engine:
   - `init( )`: initializes the database and creates a metadata file for the created tables
   - `createTable(String strTableName, String strClusteringKeyColumn, Hashtable<String,String> htblColNameType, Hashtable<String,String> htblColNameMin, Hashtable<String,String> htblColNameMax )`: creates a new table in the database
   ```
