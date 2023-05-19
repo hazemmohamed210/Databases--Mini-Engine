@@ -22,7 +22,7 @@ This project is a small database engine with support for Octree indices.
   - `createTable(String strTableName, String strClusteringKeyColumn, Hashtable<String,String> htblColNameType, Hashtable<String,String> htblColNameMin, Hashtable<String,String> htblColNameMax )`: creates a new table in the database
   ```
   DBApp db = new DBApp();
-	db.init();
+  db.init();
   Hashtable htblColNameType = new Hashtable( ); 
   htblColNameType.put("speed", "java.lang.Integer"); 
   htblColNameType.put("model", "java.lang.String"); 
