@@ -1,4 +1,4 @@
-package engine;
+package main.engine;
 
 public class SQLTerm {
 	private String _strTableName;
@@ -52,6 +52,10 @@ public class SQLTerm {
 
 	public void set_objValue(Object _objValue) {
 		this._objValue = _objValue;
+	}
+	
+	public String toString() {
+		return "table: "+this._strTableName+", col: "+this._strColumnName+", operator: "+this._strOperator+", value: "+this._objValue +" ( "+this._objValue.getClass().getSimpleName()+" )";
 	}
 
 }

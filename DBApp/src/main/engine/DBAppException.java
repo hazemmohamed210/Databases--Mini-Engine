@@ -1,4 +1,4 @@
-package engine;
+package main.engine;
 
 @SuppressWarnings("serial")
 public class DBAppException extends Exception {
