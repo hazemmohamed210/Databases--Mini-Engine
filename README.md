@@ -2,13 +2,13 @@ This project is a small database engine with support for Octree indices.
 
 #Features:
 
-1- creating tables
-2- creating Octree indices on the columns of a table
-3- inserting a single row to the table
-4- updating a single row in the table corresponding to a given primary key value
-5- deleting one or more rows from the table satisfying given conditions
-6- selecting rows satisfying a given query as inputs
-7- parsing SQL statements corresponding to one of the above features and execute the statement
+- creating tables
+- creating Octree indices on the columns of a table
+- inserting a single row to the table
+- updating a single row in the table corresponding to a given primary key value
+- deleting one or more rows from the table satisfying given conditions
+- selecting rows satisfying a given query as inputs
+- parsing SQL statements corresponding to one of the above features and execute the statement
 
 #Installation:
 
